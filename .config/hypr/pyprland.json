@@ -1,0 +1,12 @@
+{
+  "pyprland": {
+    "plugins": ["scratchpads"]
+  },
+  "scratchpads": {
+    "terminal": {
+      "command": "kitty --class kitty-scratchpad",
+      "animation": "fromTop",
+      "unfocus": "hide"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+wlogout -b 6
