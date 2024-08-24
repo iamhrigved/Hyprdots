@@ -5,7 +5,8 @@ cp -r ~/$1 ~/.Hyprdots/$1 &&
 
 # stow-ing it
 parent=$(dirname $1)
-stow --adopt $parent &&
+echo "stowing $parent at /home/hrigved/$parent"
+stow --adopt --target=/home/hrigved/$parent $parent &&
 
 # adding the changes to git
 git add . &&
