@@ -1,0 +1,207 @@
+{
+  "font": "JetBrainsMono Nerd Font",
+  "reload_style_on_change": true,
+  "width": 1920, // Waybar width
+  "spacing": 7, // Gaps between modules (4px)
+  "modules-left": ["group/quicklinks-left", "wlr/taskbar", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "mpd",
+    "network",
+    "pulseaudio",
+    "group/hardware",
+    "clock",
+    "group/quicklinks-right",
+  ],
+
+  //Taskbar
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": "20",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "tooltip-format": "Go to {title}",
+    "ignore-list": ["kitty", "kitty-scratchpad"],
+  },
+
+  // Hyprland
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "sort-by": "number",
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{}",
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 20,
+    "max-length": 30,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) - Brave": "$1",
+    },
+  },
+
+  // Quicklinks
+  "group/quicklinks-left": {
+    "orientation": "horizontal",
+    "modules": [
+      "image",
+      "custom/chatgpt",
+      "custom/terminal",
+      "custom/browser",
+      "custom/explorer",
+    ],
+  },
+  "image": {
+    "path": "/home/hrigved/Pictures/Icons/arch.png",
+    "on-click": "~/.config/rofi/menus/drun.sh",
+    "size": 18,
+  },
+  "custom/chatgpt": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Open ChatGPT!",
+    "on-click": "brave --app=https://chatgpt.com",
+  },
+  "custom/terminal": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": " Open Kitty!",
+    "on-click": "kitty",
+  },
+  "custom/browser": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": " Open Brave!",
+    "on-click": "brave",
+  },
+  "custom/explorer": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": " Open Dolphin!",
+    "on-click": "dolphin",
+  },
+
+  "group/quicklinks-right": {
+    "orientation": "horizontal",
+    "modules": ["idle_inhibitor", "custom/wallpaper", "custom/power-menu"],
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " ",
+    },
+  },
+  //"group/power-menu": {
+  //  "orientation": "inherit",
+  //  "drawer": {
+  //    "transition-duration": 500,
+  //    "children-class": "power-child",
+  //    "transition-left-to-right": false,
+  //  },
+  //  "modules": [
+  //    "custom/wlogout",
+  //    "custom/reboot",
+  //    "custom/quit",
+  //    "custom/suspend",
+  //    "custom/lock",
+  //  ],
+  //},
+  "custom/power-menu": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": " Open Wlogout!",
+    "on-click": "~/.config/hypr/scripts/power-menu.sh",
+  },
+  //"custom/lock": {
+  //  "format": " ",
+  //  "on-click": "hyprlock",
+  //},
+  //"custom/quit": {
+  //  "format": "󰍃 ",
+  //  "on-click": "hyprctl dispatch exit",
+  //},
+  //"custom/suspend": {
+  //  "format": "⏾ ",
+  //  "on-click": "systemctl suspend",
+  //},
+  //"custom/reboot": {
+  //  "format": " ",
+  //  "on-click": "systemctl reboot",
+  //},
+  "custom/wallpaper": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": " Change Wallpaper!",
+    "on-click": "~/.config/rofi/menus/swww.sh",
+  },
+
+  // Settings
+  "group/settings": {
+    "orientation": "horizontal",
+    "modules": [],
+  },
+
+  // Temperature
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", ""],
+  },
+
+  // Audio setup
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " 󰝟  {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", " ", " "],
+    },
+    "max-volume": 150,
+    "on-click": "pavucontrol",
+  },
+
+  // Network setup
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{bandwidthDownBytes}  ",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname}  ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "interval": 2,
+  },
+
+  // Hardware info
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["disk", "cpu", "memory"],
+  },
+  "disk": {
+    "format": "{percentage_used}%  ",
+    "path": "/home",
+  },
+  "cpu": {
+    "format": " {usage}%  ",
+    "tooltip": false,
+  },
+  "memory": {
+    "format": " {}%  ",
+  },
+
+  // Clock
+  "clock": {
+    "format": "󱑂 {:%R %a}", // 19:28 Mon
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "󰨳 {:%d %b %Y}", // 25 Dec 2006
+  },
+}
