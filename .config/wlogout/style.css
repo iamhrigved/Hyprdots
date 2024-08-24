@@ -1,0 +1,80 @@
+@import 'colors.css';
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+	box-shadow: none;
+}
+
+window {
+    /*opacity: 0.7;*/
+	background: url("/home/hrigved/.cache/wlogout-background");
+	background-size: cover;
+}
+
+button {
+	color: @foreground;
+    font-size:23px;
+
+    margin: 120px 0px;
+
+    background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20%;
+
+	background-color: @color1;
+    opacity: 0.8;
+    border: none;
+    border-radius: 0px;
+    transition: 0.15s ease-in-out all;
+}
+
+button:focus {
+    background-size: 25%;
+    background-color: @color3;
+}
+
+button:hover {
+    background-size: 35%;
+    background-color: @color3;
+    margin: 75px 0px;
+    border-radius: 50px;
+}
+
+/* 
+----------------------------------------------------- 
+Buttons
+----------------------------------------------------- 
+*/
+
+#lock {
+    border-radius: 50px 0px 0px 50px;
+	background-image: image(url("icons/lock.png"));
+}
+#lock:hover {
+    border-radius: 50px;
+}
+
+#shutdown {
+	background-image: image(url("icons/shutdown.png"));
+}
+
+#reboot {
+	background-image: image(url("icons/reboot.png"));
+}
+
+#suspend {
+	background-image: image(url("icons/suspend.png"));
+}
+ 
+#logout {
+	background-image: image(url("icons/logout.png"));
+}
+
+#hibernate {
+    border-radius: 0px 50px 50px 0px;
+	background-image: image(url("icons/hibernate.png"));
+}
+#hibernate:hover {
+    border-radius: 50px;
+	background-image: image(url("icons/hibernate.png"));
+}
