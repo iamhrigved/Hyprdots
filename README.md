@@ -1,4 +1,4 @@
-<h1 align="center">✨ My personal Hyprland dotfiles ✨</h1>
+<h2 align="center">✨ My personal Hyprland dotfiles ✨</h2>
 
 ![full1](Assets/full1.png)
 ![full2](Assets/full2.png)
