@@ -30,7 +30,12 @@
     "sort-by": "number",
     "all-outputs": true,
     "warp-on-scroll": false,
-    "format": "{}",
+    "format": "{icon}",
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+    },
   },
   "hyprland/window": {
     "format": "{title}",

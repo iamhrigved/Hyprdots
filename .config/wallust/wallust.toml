@@ -63,7 +63,7 @@ palette = "dark16"
 # This field chooses a method to use when the gathered colors aren't enough:
 #  * interpolation - (default) Tries to pick two colors and built gradients over them
 #  * complementary - Uses the complementary colors of two colors, or more (if needed), colors.
-# generation = "complementary"
+#generation = "complementary"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening

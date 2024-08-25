@@ -7,6 +7,15 @@
 	font-weight: normal;
 }
 
+/* COLORS USED */
+/* font-color: @foreground */
+/* widgets-background: @background */
+/* quicklinks-background: @color1 */
+/* workspaces-background: @color1 */
+/* workspaces-acticve: @color11 */
+/* workspaces-inactive: @color3 */
+/* all-hovers: @color11 */
+
 /* TOOLTIP */
 tooltip {
 	background: @background;
@@ -15,7 +24,7 @@ tooltip {
     padding: 2px 100px;
 }
 
-/* COMMON CONFIG */
+/* COMMON CONFIGS */
 #image,
 #mpd *,
 #taskbar *,
@@ -36,23 +45,12 @@ tooltip {
     color: @foreground;
     border-radius: 10px;
     background: @background;
-    padding: 0px 7px;
+    padding: 3px 7px;
     margin: 4.5px;
     opacity: 0.9;
 }
 
-/* BORDER ITEMS */
-
-/*#clock {*/
-/*    padding-right: 15px;*/
-/*}*/
-
-/* CUSTOM CONFIG */
-
-/* window */
-/*#window {*/
-/*    color: #FFFFFF;*/
-/*}*/
+/* CUSTOM CONFIGS */
 
 /* workspaces */
 #workspaces {
@@ -62,19 +60,24 @@ tooltip {
     border-radius: 15px;
 }
 #workspaces button {
-    background: @color10;
+    background: @color3;
     min-width: 25px;
     margin: 2px;
     border-radius: 45%; /* circle */
 	transition: all 0.2s ease-in-out;
+    padding: 1px;
+    padding-left: 4px; /* because browser and filebrowser icons are NOT fully centered */
     opacity: 0.6;
+}
+#workspaces button:nth-child(first) {
+    padding-left: 0px; /* because code icon IS fully centered */
 }
 #workspaces button:hover {
     opacity: 0.8;
-    background: @color10;
+    background: @color11;
 }
 #workspaces button.active { 
-    background: @color3;
+    background: @color11;
     min-width: 50px;
     border-radius: 10px;
 	transition: all 0.2s ease-in-out;
@@ -103,7 +106,7 @@ tooltip {
 }
 #quicklinks-right *:hover,
 #quicklinks-left *:hover {
-    background: @color10;
+    background: @color11;
 }
 
 /* taskbar */
@@ -111,7 +114,10 @@ tooltip {
     padding: 0px;
 }
 #taskbar * {
-    padding: 0px 3px;
+    margin: 2px 3px;
+}
+#taskbar *:hover {
+    background: @color11;
 }
 
 /* power-menu */
