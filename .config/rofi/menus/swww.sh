@@ -29,7 +29,7 @@ wallpaper_ext=$(echo $final_wallpaper | sed "s/.*\.\(.*\)/\1/")
 # changing the wallpaper and the colorscheme if selected wallpaper is not empty
 if [[ $selected_wallpaper != "" ]]; then
     swww img ~/Pictures/Wallpapers/$final_wallpaper --transition-type center --transition-fps 60 --transition-step 100 &&
-    wallust run ~/Pictures/Wallpapers/$final_wallpaper -n -p dark16 &&
+    wallust run ~/Pictures/Wallpapers/$final_wallpaper -n &&
     ln -f ~/Pictures/Wallpapers/$final_wallpaper ~/.cache/current-wallpaper && # creates a symlink to the current wallpaper
     ~/.config/hypr/scripts/generate-wallpaper-variants.sh # generates all the variants at a single time
 fi

@@ -32,9 +32,6 @@ window {
     y-offset:                    0px;
 
     enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
     border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
@@ -45,10 +42,7 @@ window {
 mainbox {
     enabled:                     true;
     spacing:                     15px;
-    margin:                      0px;
     padding:                     20px;
-    border:                      0px solid;
-    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ]; /*, "mode-switcher"]; */
@@ -106,10 +100,6 @@ listview {
     fixed-columns:               true;
     
     spacing:                     7px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;

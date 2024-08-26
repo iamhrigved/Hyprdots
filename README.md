@@ -13,6 +13,10 @@
             <td><img src="Assets/rofi1.png"></td>
             <td><img src="Assets/rofi2.png"></td>
         </tr>
+        <tr>
+            <td><img src="Assets/rofi3.png"></td>
+            <td><img src="Assets/rofi4.png"></td>
+        </tr>
     </table>
     <table>
         <h4>Hyprlock</h4>
