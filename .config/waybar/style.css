@@ -94,6 +94,7 @@ tooltip {
     background: @color1;
 }
 #quicklinks-right {
+    padding-right: 0px;
     margin-right: 7px;
 }
 #quicklinks-left {
@@ -122,9 +123,14 @@ tooltip {
 
 /* power-menu */
 #custom-power-menu {
-    color: #f7768e;
-    padding-right: 0px;
-    padding-left: 3px;
+    color: #f7768e; /* red clor */
+    padding-right: 3px;
+    padding-left: 7px;
+}
+
+/* wallpaper */
+#custom-wallpaper {
+    padding-right: 2px;
 }
 
 /* image */

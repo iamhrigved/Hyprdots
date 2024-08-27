@@ -2,4 +2,8 @@
 
 clipboard=$(cliphist list)
 
-echo $clipboard | rofi -dmenu -theme /styles/clipboard.rasi -p "󱘢" -display-columns 2  | cliphist decode | wl-copy
+selected=$(echo $clipboard | rofi -dmenu -theme /styles/clipboard.rasi -p "󱘢" -display-columns 2)
+
+if [[ $selected != "" ]]; then
+    echo $selected | cliphist decode | wl-copy
+fi

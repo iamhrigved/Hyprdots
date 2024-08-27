@@ -1,9 +1,9 @@
 * {
     font: "JetBrainsMono Nerd Font 14";
-    background:     rgba(6,3,14, 0.8);
-    background-alt: rgba(43,41,96, 0.15);
-    foreground:     rgba(168,215,231, 1);
-    selected:       rgba(75,52,121, 0.7);
-    active:         rgba(44,87,104, 1);
-    urgent:         rgba(75,52,121, 1);
+    background:     rgba(1,2,4, 0.8);
+    background-alt: rgba(11,19,25, 0.15);
+    foreground:     rgba(202,230,230, 1);
+    selected:       rgba(20,39,46, 0.7);
+    active:         rgba(64,149,150, 1);
+    urgent:         rgba(20,39,46, 1);
 }
