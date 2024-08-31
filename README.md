@@ -37,3 +37,12 @@
 ## Installation
 
 **You can install these by just copy-pasting the files in your own config 😃**
+
+## Long-term Goals
+
+- [ ] Custom themes for KDE apps
+- [ ] Custom css for Sway-Notification-Center
+- [ ] Get notifications from X (formerly Twitter), GitHub, and LinkedIn
+- [ ] Make some AGS widgets to improve QoL
+- [ ] Make these dotfiles independent
+- [ ] Laptop support (will be added when I will be getting a laptop :)
