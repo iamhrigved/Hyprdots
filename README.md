@@ -45,4 +45,4 @@
 - [ ] Get notifications from X (formerly Twitter), GitHub, and LinkedIn
 - [ ] Make some AGS widgets to improve QoL
 - [ ] Make these dotfiles independent
-- [ ] Laptop support (will be added when I will be getting a laptop :)
+- [ ] Laptop support (will be added when I get a laptop :)
