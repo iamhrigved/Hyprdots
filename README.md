@@ -32,6 +32,13 @@
             <td><img src="Assets/wlogout2.png"></td>
         </tr>
     </table>
+    <table>
+        <h4>Swaync</h4>
+        <tr>
+            <td><img src="Assets/swaync1.png"></td>
+            <td><img src="Assets/swaync2.png"></td>
+        </tr>
+    </table>
 </div>
 
 ## Installation
@@ -40,8 +47,8 @@
 
 ## Long-term Goals
 
+- [x] ~~Custom css for Sway-Notification-Center~~
 - [ ] Custom themes for KDE apps
-- [ ] Custom css for Sway-Notification-Center
 - [ ] Get notifications from X (formerly Twitter), GitHub, and LinkedIn
 - [ ] Make some AGS widgets to improve QoL
 - [ ] Make these dotfiles independent
