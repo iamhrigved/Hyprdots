@@ -5,6 +5,7 @@
 	font-family: "JetBrainsMono Nerd Font";
 	font-size: 15px;
 	font-weight: normal;
+    color: @foreground;
 }
 
 /* COLORS USED */
@@ -37,16 +38,14 @@ tooltip {
 #clock,
 #hardware,
 #network,
-#workspaces,
 #pulseaudio,
 #taskbar,
 #quicklinks-right,
 #quicklinks-left {
-    color: @foreground;
-    border-radius: 10px;
+    border-radius: 12px;
     background: @background;
     padding: 3px 7px;
-    margin: 4.5px;
+    margin: 4px;
     opacity: 0.9;
 }
 
@@ -55,22 +54,25 @@ tooltip {
 /* workspaces */
 #workspaces {
     background: @color1;
-    margin: 4px 5px;
-    padding: 1.5px;
+    margin: 4px 0px;
+    padding: 1px 0px;
     border-radius: 15px;
+    opacity: 0.9
 }
 #workspaces button {
     background: @color3;
     min-width: 25px;
-    margin: 2px;
-    border-radius: 45%; /* circle */
+    margin: 2px 4px;
+    border-radius: 12px; /* circle */
 	transition: all 0.2s ease-in-out;
     padding: 1px;
-    padding-left: 4px; /* because browser and filebrowser icons are NOT fully centered */
     opacity: 0.6;
 }
-#workspaces button:nth-child(first) {
-    padding-left: 0px; /* because code icon IS fully centered */
+#workspaces button:first-child {
+    margin-left: 3px;
+}
+#workspaces button:last-child {
+    margin-right: 3px;
 }
 #workspaces button:hover {
     opacity: 0.8;
@@ -79,13 +81,12 @@ tooltip {
 #workspaces button.active { 
     background: @color11;
     min-width: 50px;
-    border-radius: 10px;
-	transition: all 0.2s ease-in-out;
+    border-radius: 12px;
     opacity: 0.9;
 }
 #workspaces button.urgent {
 	color: @foreground;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 /* quicklinks  */
@@ -102,8 +103,13 @@ tooltip {
 }
 #quicklinks-right *,
 #quicklinks-left * {
-    padding: 0px 5px;
+    padding: 0px 3px;
+    margin: 0px 2px;
 	transition: all 0.2s ease-in-out;
+}
+#quicklinks-left * {
+    padding: 0px 0px 0px 5px;
+    font-size: 16px;
 }
 #quicklinks-right *:hover,
 #quicklinks-left *:hover {
@@ -112,9 +118,11 @@ tooltip {
 
 /* taskbar */
 #taskbar {
+    margin-left: 0px;
     padding: 0px;
 }
 #taskbar * {
+    transition: all 0.2s ease-in-out;
     margin: 2px 3px;
 }
 #taskbar *:hover {
@@ -124,8 +132,13 @@ tooltip {
 /* power-menu */
 #custom-power-menu {
     color: #f7768e; /* red clor */
-    padding-right: 3px;
-    padding-left: 7px;
+    padding-right: 2px;
+    padding-left: 5px;
+}
+
+/* notification */
+#custom-notification {
+    padding: 0px 7px 0px 2px;
 }
 
 /* wallpaper */
@@ -139,6 +152,6 @@ tooltip {
     padding: 0px;
 }
 
-#cava {
-    background: @background;
+#window {
+    margin-left: 10px;
 }

@@ -1,0 +1,115 @@
+@import "colors.css";
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 15px;
+    color: @foreground;
+    transition: 200ms;
+}
+
+/********************************
+********* NOTIFICATION **********
+*********************************/
+
+.notification {
+    border: none;
+    border-radius: 15px;
+}
+
+.summary {
+    font-size: 16px;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.notification-background {
+    background: transparent;
+}
+
+.notification-content {
+    background: transparent;
+    border-radius: 0px;
+    padding: 10px;
+}
+.image, .body-image { /* .image is the icon */
+    margin: 0px 5px 0px 0px;
+}
+
+.notification-default-action {
+    background: @background;
+    border: 2px solid @noti-bg;
+    border-radius: 15px;
+    transition: all .2s ease-in-out;
+}
+.notification-default-action:not(:only-child) { /* if other action options are also present */
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.notification-default-action:hover {
+    border: 2px solid @noti-border-dark;
+}
+
+.notification-action {
+    border: none;
+    border-radius: 5px;
+    background: @noti-bg;
+}
+.notification-action:hover {
+    background: @noti-bg-alt;
+    border: 2px solid @noti-border-light;
+}
+.notification-action:first-child {
+    border-bottom-left-radius: 15px;
+}
+.notification-action:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+.close-button {
+    padding: 0px;
+    margin: 5px;
+}
+.close-button:hover {
+    box-shadow: none;
+    background: rgba(247, 118, 142, 0.5); /* TokyoNight Red color */
+    transition: all .2s ease-in-out;
+}
+
+/********************************
+******** CONTROL CENTER *********
+********************************/
+
+.control-center {
+    background: @background;
+    border-radius: 15px;
+}
+
+.notification-row {
+    background: transparent;
+    outline: none;
+}
+
+.time {
+    color: gray;
+    margin: 3px 37px 0px 0px;
+}
+
+.widget-buttons-grid {
+    margin-top: 15px;
+    background: @background;
+}
+.widget-volume {
+    background: @background;
+}
+.widget-mpris {
+    margin: 8px;
+    padding: 0px;
+    border-radius: 12px;
+    background: @background;
+}
+
+.control-center-list {
+    background: transparent
+}

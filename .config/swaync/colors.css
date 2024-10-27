@@ -1,17 +1,17 @@
+@define-color background rgba(9,6,5, 0.8);
 @define-color foreground #FAF0EE;
-@define-color background rgba(9,6,5,0.50);
-@define-color cursor #FAF0EE;
 
 @define-color color0 #090605;
-@define-color color1 #241914;
+@define-color noti-bg rgba(36,25,20, 0.6);
 @define-color color2 #482D26;
 @define-color color3 #514542;
 @define-color color4 #714E49;
-@define-color color5 #957573;
+@define-color noti-border-dark rgba(149,117,115, 1);
+@define-color noti-border-light rgba(149,117,115, 0.6);
 @define-color color6 #B6A09B;
 @define-color color7 #F0E2DE;
 @define-color color8 #A89E9B;
-@define-color color9 #31221B;
+@define-color noti-bg-alt rgba(49,34,27, 0.6);
 @define-color color10 #613C33;
 @define-color color11 #6D5C59;
 @define-color color12 #976862;

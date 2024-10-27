@@ -31,11 +31,11 @@
     "all-outputs": true,
     "warp-on-scroll": false,
     "format": "{icon}",
-    "format-icons": {
-      "1": " ",
-      "2": " ",
-      "3": " ",
-    },
+    //"format-icons": {
+    //  "1": " ",
+    //  "2": " ",
+    //  "3": " ",
+    //},
   },
   "hyprland/window": {
     "format": "{title}",
@@ -48,15 +48,20 @@
     },
   },
 
+  // Tray
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
+
   // Quicklinks
   "group/quicklinks-left": {
     "orientation": "horizontal",
     "modules": [
       "image",
       "custom/chatgpt",
-      "custom/terminal",
-      "custom/browser",
-      "custom/explorer",
+      "custom/settings",
+      "custom/clipboard",
     ],
   },
   "image": {
@@ -70,28 +75,45 @@
     "tooltip-format": "Open ChatGPT!",
     "on-click": "brave --app=https://chatgpt.com",
   },
-  "custom/terminal": {
-    "format": " ",
+  "custom/settings": {
+    "format": " ",
     "tooltip": true,
-    "tooltip-format": " Open Kitty!",
-    "on-click": "kitty",
+    "tooltip-format": "Open Settings!",
+    "on-click": "systemsettings",
   },
-  "custom/browser": {
-    "format": " ",
+  "custom/clipboard": {
+    "format": "󱘢 ",
     "tooltip": true,
-    "tooltip-format": " Open Brave!",
-    "on-click": "brave",
+    "tooltip-format": "Open Clipboard Manager!",
+    "on-click": "~/.config/rofi/menus/clipboard.sh",
   },
-  "custom/explorer": {
-    "format": " ",
-    "tooltip": true,
-    "tooltip-format": " Open Dolphin!",
-    "on-click": "dolphin",
-  },
+  //"custom/terminal": {
+  //  "format": " ",
+  //  "tooltip": true,
+  //  "tooltip-format": " Open Kitty!",
+  //  "on-click": "kitty",
+  //},
+  //"custom/browser": {
+  //  "format": " ",
+  //  "tooltip": true,
+  //  "tooltip-format": " Open Brave!",
+  //  "on-click": "brave",
+  //},
+  //"custom/explorer": {
+  //  "format": " ",
+  //  "tooltip": true,
+  //  "tooltip-format": " Open Dolphin!",
+  //  "on-click": "dolphin",
+  //},
 
   "group/quicklinks-right": {
     "orientation": "horizontal",
-    "modules": ["idle_inhibitor", "custom/wallpaper", "custom/power-menu"],
+    "modules": [
+      "idle_inhibitor",
+      "custom/wallpaper",
+      "custom/notification",
+      "custom/power-menu",
+    ],
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -143,6 +165,26 @@
     "tooltip-format": " Change Wallpaper!",
     "on-click": "~/.config/rofi/menus/swww.sh",
   },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
 
   // Settings
   "group/settings": {
@@ -154,6 +196,7 @@
   "temperature": {
     "critical-threshold": 80,
     "format": "{temperatureC}°C {icon}",
+    "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/nvme/nvme0/hwmon1/temp1_input",
     "format-icons": ["", "", ""],
   },
 
@@ -162,8 +205,8 @@
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " 󰝟  {format_source}",
-    "format-source": "{volume}% ",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": "{volume}%",
     "format-source-muted": "",
     "format-icons": {
       "default": ["", " ", " "],
@@ -175,13 +218,12 @@
   // Network setup
   "network": {
     "format": "{ifname}",
-    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-wifi": "{essid} {bandwidthDownBytes}  ",
     "format-ethernet": "{bandwidthDownBytes}  ",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "󱍢 No Internet",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
     "tooltip-format-ethernet": "{ifname}  ",
-    "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "interval": 2,
   },
