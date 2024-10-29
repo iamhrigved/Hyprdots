@@ -29,7 +29,16 @@ wallpaper_ext=$(echo $final_wallpaper | sed "s/.*\.\(.*\)/\1/")
 # changing the wallpaper and the colorscheme if selected wallpaper is not empty
 if [[ $selected_wallpaper != "" ]]; then
     swww img ~/Pictures/Wallpapers/$final_wallpaper --transition-type center --transition-fps 60 --transition-step 100 &&
-    wallust run ~/Pictures/Wallpapers/$final_wallpaper -n &&
+
+    wallust run ~/Pictures/Wallpapers/$final_wallpaper -n -s && # running wallust without terminal color sequences
+
+    ~/.config/hypr/scripts/terminal-red-color.sh && # changing the red color of the terminal (it looks bad by default)
+
+    plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Wallust &&
+
     ln -f ~/Pictures/Wallpapers/$final_wallpaper ~/.cache/current-wallpaper && # creates a symlink to the current wallpaper
-    ~/.config/hypr/scripts/generate-wallpaper-variants.sh # generates all the variants at a single time
+
+    ~/.config/hypr/scripts/generate-wallpaper-variants.sh && # generates all the variants at a single time
+
+    swaync-client -R && swaync-client -rs # reloads swaync css
 fi

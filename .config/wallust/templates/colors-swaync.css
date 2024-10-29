@@ -2,16 +2,16 @@
 @define-color foreground {{foreground}};
 
 @define-color color0 {{color0}};
-@define-color noti-bg rgba({{color1.rgb}}, 0.6);
+@define-color noti-bg-light rgba({{color1.rgb}}, 0.6);
+@define-color noti-bg-dark rgba({{color1.rgb}}, 0.78);
 @define-color color2 {{color2}};
 @define-color color3 {{color3}};
 @define-color color4 {{color4}};
-@define-color noti-border-dark rgba({{color5.rgb}}, 1);
-@define-color noti-border-light rgba({{color5.rgb}}, 0.6);
+@define-color noti-border rgba({{color5.rgb}}, 1);
 @define-color color6 {{color6}};
 @define-color color7 {{color7}};
 @define-color color8 {{color8}};
-@define-color noti-bg-alt rgba({{color9.rgb}}, 0.6);
+@define-color noti-bg-alt rgba({{color9.rgb}}, 0.8);
 @define-color color10 {{color10}};
 @define-color color11 {{color11}};
 @define-color color12 {{color12}};
