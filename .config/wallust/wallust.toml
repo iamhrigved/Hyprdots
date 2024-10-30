@@ -1,125 +1,23 @@
-# wallust 2.9.0-d.*
-# -- global space -- #
-# values below can be overwritten by command line flags
-
-# How the image is parse, in order to get the colors:
-#  * full       - Read and return the whole image pixels more precision slower
-#  * resized    - Resizes the image before parsing mantaining it s aspect ratio
-#  * wal        - Uses image magick convert to generate the colors like pywal
-#  * thumb      - Faster algo hardcoded to x no ratio respected
-#  * fastresize - A much faster resize algo that uses SIMD For some reason it fails on
-#                  some images where resized doesn t for this reason it doesn t replace
-#                  but rather it s a new option
-#  * kmeans     - Kmeans is an algo that divides and picks pixels all around the image
-#                  Requires more tweaking and more in depth testing but for the most part
-#                  it just werks
 backend = "kmeans"
 
-# What color space to use to produce and select the most prominent colors:
-#  * lab      - Uses Cie L a b color space
-#  * labmixed - Variant of lab that mixes the colors gathered if not enough colors it
-#                fallbacks to usual lab not recommended in small images
-#  * labfast  - Variant of lab that avoids floating arithmetic thus faster operations but
-#                not that much precise result Images that work on lab labmixed could not
-#                have enough colors for labfast
 color_space = "lab"
 
-# Difference between similar colors, used by the colorspace:
-#  1          Not perceptible by human eyes.
-#  1 - 2      Perceptible through close observation.
-#  2 - 10     Perceptible at a glance.
-#  11 - 49    Colors are more similar than opposite
-#  100        Colors are exact opposite
-threshold = 10
+threshold = 20
 
-# NOTE: All palettes will fill 16 colors (from color0 to color15), 16 color
-#       variations are the 'ilusion' of more colors by opaquing color1 to color5.
-# Use the most prominent colors in a way that makes sense, a scheme:
-#  * dark            - dark colors dark background and light contrast
-#  * dark16          - Same as dark but uses the colors trick
-#  * darkcomp        - This is a dark variant that changes all colors to it s
-#                       complementary counterpart giving the feeling of a new palette but
-#                       that still makes sense with the image provided
-#  * darkcomp16      - variation of the dark complementary variant
-#  * harddark        - Same as dark with hard hue colors
-#  * harddark16      - Harddark with color variation
-#  * harddarkcomp    - complementary colors variation of harddark scheme
-#  * harddarkcomp16  - complementary colors variation of harddark scheme
-#  * light           - Light bg dark fg
-#  * light16         - Same as light but uses the color trick
-#  * lightcomp       - complementary colors variation of light
-#  * lightcomp16     - complementary colors variation of light with the color variation
-#  * softdark        - Variant of softlight uses the lightest colors and a dark background
-#                       could be interpreted as dark inversed
-#  * softdark16      - softdark with color variation
-#  * softdarkcomp    - complementary variation for softdark
-#  * softdarkcomp16  - complementary variation for softdark with the color variation
-#  * softlight       - Light with soft pastel colors counterpart of harddark
-#  * softlight16     - softlight with color variation
-#  * softlightcomp   - softlight with complementary colors
-#  * softlightcomp16 - softlight with complementary colors with colors
 palette = "dark16"
-
-# This field chooses a method to use when the gathered colors aren't enough:
-#  * interpolation - (default) Tries to pick two colors and built gradients over them
-#  * complementary - Uses the complementary colors of two colors, or more (if needed), colors.
-#generation = "complementary"
-
-# Ensures a "readable contrast" (OPTIONAL, disabled by default)
-# Should only be enabled when you notice an unreadable contrast frequently happening
-# with your images. The reference color for the contrast is the background color.
-#check_contrast = true
-
-# Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
-# usually something higher than 50 increases the saturation and below
-# decreases it (on a scheme with strong and vivid colors)
-saturation = 40
-
-# Alpha value for templating, by default 100 (no other use whatsoever)
-#alpha = 100
 
 [templates]
 
-kitty = { src = "templates/colors-kitty.conf", dst = "~/.config/kitty/colors.conf", new_engine = true }
+kitty = { src = "colors-kitty.conf", dst = "~/.config/kitty/colors.conf" }
 
-hypr = { src = "templates/colors-hypr.conf", dst = "~/.config/hypr/colors.conf", new_engine = true }
+hypr = { src = "colors-hypr.conf", dst = "~/.config/hypr/colors.conf" }
 
-waybar = { src = "templates/colors-waybar.css", dst = "~/.config/waybar/colors.css", new_engine = true }
+waybar = { src = "colors-waybar.css", dst = "~/.config/waybar/colors.css" }
 
-rofi = { src = "templates/colors-rofi.rasi", dst = "~/.config/rofi/colors.rasi", new_engine = true }
+rofi = { src = "colors-rofi.rasi", dst = "~/.config/rofi/colors.rasi" }
 
-wlogout = { src = "templates/colors-wlogout.css", dst = "~/.config/wlogout/colors.css", new_engine = true }
+wlogout = { src = "colors-wlogout.css", dst = "~/.config/wlogout/colors.css" }
 
-# template: A relative path that points to a file where wallust.toml is located, usually at `~/.config/wallust/`
-# target: Absolute path in which to place a file with generated templated values
-# NOTE: prefer '' over "" for paths, avoids escaping.
-#zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
+swaync = { src = "colors-swaync.css", dst = "~/.config/swaync/colors.css" }
 
-# OPTIONALLY It can accept `new_engine = true`: This "new engine" difers by using  double brackets like `{{variable}}`
-# instead of one like usual, which helps with file formats that use brackets like json. With the `new_engine` enabled
-# you can escape and produce a literal `{{` by `{{{{}}`, and for `}}` you escape it with `{{}}}}`.
-#dunst = { template = 'dunstconfig', target = '~/.config/dunst/dunstrc', new_engine = true }
-
-# template field can be express as `src` and target as `dst` for shorter naming:
-#alacritty = { src = 'alacrittycfg', dst = '~/.config/alacritty/alacritty.toml' }
-# As well as using dotted toml fields, both `alacritty` fields represent the same;
-#alacritty.src = 'alacrittycfg'
-#alacritty.dst = '~/.config/alacritty/alacritty.toml'
-
-# REMINDER Variables and methods that can be used with templating:
-#  wallpaper:  The full path to the current wallpaper, colorscheme file or the name of the theme in use.
-#  backend:    Current **backend** being used.
-#  colorspace: Current **colorspace** being used.
-#  palette:     Current **palette** being used.
-#  alpha:      Default to 100, can be modified in the config file or with `--alpha`/`-a`.
-#  alpha_dec:  Instead of [0..=100], displays it from 0.00 to 1.00.
-#  var:        Output the color in `hex`.
-#  var.rgb:    Output the color in `rgb`.
-#  var.rgba:   Output the color in `rgba`.
-#  var.xrgba:  Output the color in `xrgb`.
-#  var.strip:  Output the color in `hex` (without a `#`).
-#  var.red:    Output the red value.
-#  var.green:  Output the green value.
-#  var.blue:   Output the blue value.
-#
-# Where `var` can be colors from `color0` to `color15`, `background`, `foreground` and `cursor`.
+kde = { src = "colors-kde.colors", dst = "~/.local/share/color-schemes/Wallust.colors" }

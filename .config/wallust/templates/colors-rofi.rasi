@@ -1,9 +1,9 @@
 * {
     font: "JetBrainsMono Nerd Font 14";
-    background:     rgba({{background.rgb}}, 0.8);
-    background-alt: rgba({{color1.rgb}}, 0.15);
-    foreground:     rgba({{foreground.rgb}}, 1);
-    selected:       rgba({{color3.rgb}}, 0.7);
-    active:         rgba({{color6.rgb}}, 1);
-    urgent:         rgba({{color3.rgb}}, 1);
+    background:     rgba({{background | darken(0.7) | rgb}}, 0.7);
+    background-alt: rgba({{color1 | rgb}}, 0.15);
+    foreground:     rgba({{foreground | rgb}}, 1);
+    selected:       rgba({{color5 | rgb}}, 0.5);
+    active:         rgba({{color6 | rgb}}, 1);
+    urgent:         rgba({{color3 | rgb}}, 1);
 }

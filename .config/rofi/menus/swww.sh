@@ -30,9 +30,7 @@ wallpaper_ext=$(echo $final_wallpaper | sed "s/.*\.\(.*\)/\1/")
 if [[ $selected_wallpaper != "" ]]; then
     swww img ~/Pictures/Wallpapers/$final_wallpaper --transition-type center --transition-fps 60 --transition-step 100 &&
 
-    wallust run ~/Pictures/Wallpapers/$final_wallpaper -n -s && # running wallust without terminal color sequences
-
-    ~/.config/hypr/scripts/terminal-red-color.sh && # changing the red color of the terminal (it looks bad by default)
+    wallust run ~/Pictures/Wallpapers/$final_wallpaper -n && kill -SIGUSR1 $(pgrep kitty) && # running wallust then reloading kitty
 
     plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Wallust &&
 

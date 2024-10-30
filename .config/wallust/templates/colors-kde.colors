@@ -1,0 +1,112 @@
+[General]
+ColorScheme=Wallust
+Name=Wallust
+shadeSortColumn=true
+
+[Colors:Window]
+BackgroundNormal={{background | rgb}}
+BackgroundAlternate={{background | rgb}}
+DecorationFocus=84,110,122
+DecorationHover=84,110,122
+ForegroundActive={{foreground | rgb}}
+ForegroundInactive=172,180,196
+ForegroundLink=41,128,185
+ForegroundNegative=201,212,230
+ForegroundNeutral=246,116,0
+ForegroundNormal=183,186,195
+ForegroundPositive=31,140,236
+ForegroundVisited=127,140,141
+
+[Colors:View]
+BackgroundNormal={{background | rgb}}
+BackgroundAlternate={{background | rgb}}
+DecorationFocus=84,110,122
+DecorationHover=84,110,122
+ForegroundActive={{foreground | rgb}}
+ForegroundInactive=172,180,196
+ForegroundLink=31,140,236
+ForegroundNegative=201,212,230
+ForegroundNeutral=246,116,0
+ForegroundNormal=237,240,242
+ForegroundPositive=31,140,236
+ForegroundVisited=127,140,141
+
+[Colors:Header]
+BackgroundNormal={{color1 | rgb}}
+
+[ColorEffects:Disabled]
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=0
+IntensityAmount=0.1
+IntensityEffect=0
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=false
+Color=112,111,110
+ColorAmount=-0.9500000000000001
+ColorEffect=0
+ContrastAmount=0.1
+ContrastEffect=0
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate={{color3 | rgb}}
+BackgroundNormal={{color3 | rgb}}
+DecorationFocus=84,110,122
+DecorationHover=84,110,122
+ForegroundActive={{foreground | rgb}}
+ForegroundInactive=172,180,196
+ForegroundLink=41,128,185
+ForegroundNegative=201,212,230
+ForegroundNeutral=246,116,0
+ForegroundNormal=201,212,230
+ForegroundPositive=31,140,236
+ForegroundVisited=127,140,141
+
+[Colors:Complementary]
+BackgroundAlternate=38,50,56
+BackgroundNormal=38,50,56
+
+[Colors:Selection]
+BackgroundAlternate=38,50,56
+BackgroundNormal={{color3 | rgb}}
+DecorationFocus=84,110,122
+DecorationHover=84,110,122
+ForegroundActive={{foreground | rgb}}
+ForegroundInactive={{foreground | rgb}}
+ForegroundLink=253,188,75
+ForegroundNegative=201,212,230
+ForegroundNeutral=246,116,0
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive=31,140,236
+ForegroundVisited=189,195,199
+
+[Colors:Tooltip]
+BackgroundAlternate={{background | rgb}}
+BackgroundNormal={{background | rgb}}
+DecorationFocus=84,110,122
+DecorationHover=84,110,122
+ForegroundActive={{foreground | rgb}}
+ForegroundInactive=172,180,196
+ForegroundLink=41,128,185
+ForegroundNegative=201,212,230
+ForegroundNeutral=246,116,0
+ForegroundNormal=237,240,242
+ForegroundPositive=31,140,236
+ForegroundVisited=127,140,141
+
+[KDE]
+contrast=10
+
+[WM]
+activeBackground=38,50,56
+activeBlend=0,0,0
+activeForeground=237,240,242
+inactiveBackground=38,50,56
+inactiveBlend=38,50,56
+inactiveForeground=172,180,196
