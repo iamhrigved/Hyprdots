@@ -7,8 +7,7 @@
 
 window {
     /*opacity: 0.7;*/
-	background: url("/home/hrigved/.cache/wlogout-background");
-	background-size: cover;
+	background: none;
 }
 
 button {

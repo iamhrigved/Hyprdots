@@ -3,13 +3,18 @@
   "reload_style_on_change": true,
   "width": 1920, // Waybar width
   "spacing": 7, // Gaps between modules (4px)
-  "modules-left": ["group/quicklinks-left", "wlr/taskbar", "hyprland/window"],
+  "modules-left": [
+    "group/quicklinks-left",
+    "wlr/taskbar",
+    "network",
+    "hyprland/window",
+  ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "mpd",
-    "network",
     "pulseaudio",
     "group/hardware",
+    "custom/keyboard",
     "clock",
     "group/quicklinks-right",
   ],
@@ -59,7 +64,7 @@
     "orientation": "horizontal",
     "modules": [
       "image",
-      "custom/chatgpt",
+      "custom/claude",
       "custom/settings",
       "custom/clipboard",
     ],
@@ -69,11 +74,11 @@
     "on-click": "~/.config/rofi/menus/drun.sh",
     "size": 18,
   },
-  "custom/chatgpt": {
-    "format": " ",
+  "custom/claude": {
+    "format": "  ",
     "tooltip": true,
-    "tooltip-format": "Open ChatGPT!",
-    "on-click": "brave --app=https://chatgpt.com",
+    "tooltip-format": "Open Claude AI!",
+    "on-click": "brave --app=https://claude.ai",
   },
   "custom/settings": {
     "format": " ",
@@ -166,7 +171,7 @@
     "on-click": "~/.config/rofi/menus/swww.sh",
   },
   "custom/notification": {
-    "tooltip": false,
+    "tooltip": true,
     "format": "{icon}",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
@@ -175,7 +180,7 @@
       "dnd-none": "",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "dnd-inhibited-none": "",
     },
     "return-type": "json",
@@ -200,6 +205,19 @@
     "format-icons": ["", "", ""],
   },
 
+  // Current Keyboard Layout
+  "custom/keyboard": {
+    "exec": "~/.config/hypr/scripts/waybar-kb-layout.sh",
+    "on-click": "~/.config/hypr/scripts/change-kb-layout.sh",
+    "return-type": "json",
+    "format-icons": {
+      "colemak_dh": "󰌌 ",
+      "qwerty": "󰌌 ",
+    },
+    "interval": 1,
+    "format": "{} <span font='16' rise='-1800'>{icon}</span>",
+  },
+
   // Audio setup
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -218,12 +236,12 @@
   // Network setup
   "network": {
     "format": "{ifname}",
-    "format-wifi": "{essid} {bandwidthDownBytes}  ",
-    "format-ethernet": "{bandwidthDownBytes}  ",
+    "format-wifi": "  {essid} {bandwidthDownBytes}",
+    "format-ethernet": "  {bandwidthDownBytes}",
     "format-disconnected": "󱍢 No Internet",
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
-    "tooltip-format-ethernet": "{ifname}  ",
+    "tooltip-format": "󰊗 {ifname} via {gwaddr}",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "  {ifname}",
     "max-length": 50,
     "interval": 2,
   },
@@ -231,7 +249,7 @@
   // Hardware info
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["disk", "cpu", "memory"],
+    "modules": ["cpu", "memory"],
   },
   "disk": {
     "format": "{percentage_used}%  ",
