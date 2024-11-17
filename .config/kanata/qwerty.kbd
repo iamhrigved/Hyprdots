@@ -1,0 +1,34 @@
+(defcfg
+    process-unmapped-keys yes
+    linux-dev-names-exclude (
+        "YSPRINGTECH USB OPTICAL MOUSE"
+  )
+)
+
+(defsrc
+    caps a s d f ; l k j
+)
+
+(defalias
+    esc-ctl (tap-hold 100 100 esc lctl)
+    a-mod (tap-hold 200 200 a lmet)
+    s-mod (tap-hold 200 200 s lalt)
+    d-mod (tap-hold 200 200 d lsft)
+    f-mod (tap-hold 200 200 f lctl)
+    ;-mod (tap-hold 200 200 ; rmet)
+    l-mod (tap-hold 200 200 l ralt)
+    k-mod (tap-hold 200 200 k rsft)
+    j-mod (tap-hold 200 200 j rctl)
+)
+
+(deflayer main
+    @esc-ctl
+    @a-mod
+    @s-mod
+    @d-mod
+    @f-mod
+    @;-mod
+    @l-mod
+    @k-mod
+    @j-mod
+)
