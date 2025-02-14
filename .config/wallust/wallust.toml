@@ -2,13 +2,15 @@ backend = "kmeans"
 
 color_space = "lab"
 
-threshold = 20
+threshold = 18
 
 palette = "dark16"
 
 [templates]
 
 kitty = { src = "colors-kitty.conf", dst = "~/.config/kitty/colors.conf" }
+
+ghostty = { src = "colors-ghostty", dst = "~/.config/ghostty/colors" }
 
 hypr = { src = "colors-hypr.conf", dst = "~/.config/hypr/colors.conf" }
 

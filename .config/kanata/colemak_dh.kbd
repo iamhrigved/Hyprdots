@@ -11,17 +11,19 @@
     lsft     z    x    c    v    b    n    m
 )
 
+;; see: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#tap-hold
 (defalias
-    caps (tap-hold 100 100 esc lctl)
-    a (tap-hold 200 200 a lmet)
-    r (tap-hold 200 200 r lalt)
-    s (tap-hold 200 200 s lsft)
-    t (tap-hold 200 200 t lctl)
-    n (tap-hold 200 200 n rctl)
-    e (tap-hold 200 200 e rsft)
-    i (tap-hold 200 200 i ralt)
-    o (tap-hold 200 200 o rmet)
+    caps (multi f24 (tap-hold 150 150 esc lctl))
+    a (multi f24 (tap-hold 200 200 a lalt))
+    r (multi f24 (tap-hold 200 170 r lmet))
+    s (multi f24 (tap-hold 200 170 s lsft))
+    t (multi f24 (tap-hold 200 170 t lctl))
+    n (multi f24 (tap-hold 200 170 n rctl))
+    e (multi f24 (tap-hold 200 170 e rsft))
+    i (multi f24 (tap-hold 200 200 i rmet))
+    o (multi f24 (tap-hold 200 200 o ralt))
 )
+
 
 (deflayer colemak_dh
     tab  q    w    f    p    b    j    l    u    y    ;

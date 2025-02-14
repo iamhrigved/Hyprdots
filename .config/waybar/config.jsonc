@@ -253,19 +253,22 @@
   },
   "disk": {
     "format": "{percentage_used}%  ",
+    "interval": 5,
     "path": "/home",
   },
   "cpu": {
-    "format": " {usage}%  ",
+    "format": "{usage}%  ",
+    "interval": 5,
     "tooltip": false,
   },
   "memory": {
     "format": " {}%  ",
+    "interval": 5,
   },
 
   // Clock
   "clock": {
-    "format": "󱑂 {:%R %a}", // 19:28 Mon
+    "format": "<span font='12.5'>󱑂</span> {:%R %a}", // 19:28 Mon
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "󰨳 {:%d %b %Y}", // 25 Dec 2006
   },

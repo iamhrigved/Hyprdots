@@ -39,7 +39,8 @@
 
 .notification-default-action {
     background: @background;
-    border: 2px solid @noti-bg;
+    border: 2px solid @noti-bg-dark;
+    opacity: 1;
     border-radius: 15px;
     transition: all .2s ease-in-out;
 }
@@ -48,17 +49,17 @@
     border-bottom-right-radius: 7px;
 }
 .notification-default-action:hover {
-    border: 2px solid @noti-border-dark;
+    border: 2px solid @noti-border;
 }
 
 .notification-action {
     border: none;
     border-radius: 5px;
-    background: @noti-bg;
+    background: @noti-bg-light;
 }
 .notification-action:hover {
     background: @noti-bg-alt;
-    border: 2px solid @noti-border-light;
+    border: 2px solid @noti-border;
 }
 .notification-action:first-child {
     border-bottom-left-radius: 15px;

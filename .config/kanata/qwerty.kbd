@@ -9,16 +9,17 @@
     caps a s d f ; l k j
 )
 
+;; see: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#tap-hold
 (defalias
-    esc-ctl (tap-hold 100 100 esc lctl)
-    a-mod (tap-hold 200 200 a lmet)
-    s-mod (tap-hold 200 200 s lalt)
-    d-mod (tap-hold 200 200 d lsft)
-    f-mod (tap-hold 200 200 f lctl)
-    ;-mod (tap-hold 200 200 ; rmet)
-    l-mod (tap-hold 200 200 l ralt)
-    k-mod (tap-hold 200 200 k rsft)
-    j-mod (tap-hold 200 200 j rctl)
+    esc-ctl (multi f24 (tap-hold 150 150 esc lctl))
+    a-mod (multi f24 (tap-hold 200 200 a lalt))
+    s-mod (multi f24 (tap-hold 200 200 s lmet))
+    d-mod (multi f24 (tap-hold 200 200 d lsft))
+    f-mod (multi f24 (tap-hold 200 200 f lctl))
+    ;-mod (multi f24 (tap-hold 200 200 ; ralt))
+    l-mod (multi f24 (tap-hold 200 200 l rmet))
+    k-mod (multi f24 (tap-hold 200 200 k rsft))
+    j-mod (multi f24 (tap-hold 200 200 j rctl))
 )
 
 (deflayer main

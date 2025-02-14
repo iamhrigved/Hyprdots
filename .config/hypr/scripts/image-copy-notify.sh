@@ -9,7 +9,7 @@ if cmp -s /tmp/clipboard-image /tmp/prev-clipboard-image; then # compare to old 
     exit 0
 fi
 
-notify-send "Image Copied!" 'This image is copied to clipboard! <img src="/tmp/clipboard-image">' -i "preferences-wallpaper"
+notify-send "Image Copied!" 'This image is copied to clipboard! <img src="/tmp/clipboard-image">' -i "image"
 
 cat /tmp/clipboard-image | cliphist store # store to cliphist
 

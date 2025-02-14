@@ -7,8 +7,11 @@ if [[ $current_layout == "colemak_dh" ]]; then
     echo "qwerty" > $layout_file &&
     systemctl --user restart kanata.service &&
     notify-send -i "key_bindings" "QWERTY" "Keyboard Layout changed!"
-else
-    echo "colemak_dh" > $layout_file &&
-    systemctl --user restart kanata.service &&
-    notify-send -i "key_bindings" "Colemak DH" "Keyboard Layout changed!"
+    exit
 fi
+
+# if current layout is qwerty
+
+echo "colemak_dh" > $layout_file &&
+systemctl --user restart kanata.service &&
+notify-send -i "key_bindings" "Colemak DH" "Keyboard Layout changed!"

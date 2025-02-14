@@ -87,7 +87,7 @@ entry {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       6;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -112,7 +112,7 @@ scrollbar {
 element {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     0px 10px;
+    padding:                     0px 20px;
     border-radius:               12px;
     border-color:                @selected;
     text-color:                  @foreground;
@@ -133,7 +133,7 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        62px;
+    size:                        90px;
     cursor:                      inherit;
 }
 element-text {

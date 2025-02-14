@@ -1,7 +1,7 @@
 configuration {
-    modi:                       "emoji";
-    display-emoji:              "󰞅";
-    show-icons:                 false;
+    /*modi:                       "emoji";*/
+    /*display-emoji:              "󰞅";*/
+    show-icons:                 true;
 
     kb-remove-to-eol: "";
     kb-mode-complete: "";
@@ -40,7 +40,7 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "inputbar", "listview" ];
+    children:                    [ "inputbar", "listview", "mode-switcher"];
 }
 
 /*****----- Inputbar -----*****/
@@ -75,7 +75,7 @@ entry {
     border-radius:               10px;
     padding:                     13px;
     background-color:            @background;
-    text-color:                  inherit;
+    text-color:                  @foreground;
     cursor:                      text;
     placeholder:                 "Search...";
     placeholder-color:           inherit;
@@ -84,14 +84,14 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     8;
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                false;
+    fixed-height:                true;
     fixed-columns:               true;
     
     spacing:                     5px;
@@ -127,16 +127,28 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        62px;
+    size:                        24px;
     cursor:                      inherit;
 }
 element-text {
+    enabled:                     false;
     background-color:            transparent;
     text-color:                  inherit;
     highlight:                   inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
+}
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
 }
 
 /*****----- Message -----*****/

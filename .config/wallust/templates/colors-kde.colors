@@ -57,8 +57,8 @@ IntensityEffect=0
 [Colors:Button]
 BackgroundAlternate={{color3 | rgb}}
 BackgroundNormal={{color3 | rgb}}
-DecorationFocus=84,110,122
-DecorationHover=84,110,122
+DecorationFocus=255,255,255
+DecorationHover=255,255,255
 ForegroundActive={{foreground | rgb}}
 ForegroundInactive=172,180,196
 ForegroundLink=41,128,185
