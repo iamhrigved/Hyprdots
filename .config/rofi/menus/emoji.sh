@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-rofimoji -f emojis gitmoji nerd_font kaomoji fontawesome6 --selector-args "-theme /styles/emoji.rasi" --use-icons
+rofi -modi emoji -show emoji -theme /styles/emoji.rasi -emoji-format '<span size="large">{emoji}</span> <span weight="bold">{name}</span> <span size="small">({keywords})</span>'

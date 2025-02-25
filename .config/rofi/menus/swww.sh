@@ -16,6 +16,7 @@ current_wallpaper_name=${current_wallpaper_path:t}
 # good thresholds for specific wallpapers
 typeset -A hash
 hash[landscape5.jpg]=8
+hash[landscape6.png]=14
 hash[forest2-mononoke.png]=6
 hash[anime1.png]=20
 hash[anime2.jpg]=20

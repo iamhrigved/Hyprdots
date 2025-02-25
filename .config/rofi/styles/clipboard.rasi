@@ -3,12 +3,6 @@ configuration {
 
     kb-remove-to-eol: "";
     kb-mode-complete: "";
-
-    kb-accept-entry: "Tab,Return";
-    kb-element-next: "Control+j";
-    kb-element-prev: "Control+k";
-    /*kb-row-left: "Control+h";*/
-    kb-row-right: "Control+l";
 }
 
 /*****----- Global Properties -----*****/
@@ -85,7 +79,7 @@ entry {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       10;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -105,7 +99,7 @@ listview {
 element {
     enabled:                     true;
     spacing:                     0px;
-    padding:                     12px;
+    padding:                     9px 10px;
     border:                      0px solid;
     border-radius:               12px;
     border-color:                @selected;

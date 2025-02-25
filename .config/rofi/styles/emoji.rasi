@@ -1,16 +1,11 @@
 configuration {
-    /*modi:                       "emoji";*/
-    /*display-emoji:              "󰞅";*/
-    show-icons:                 true;
+    modi:                       "emoji";
+    display-emoji:              "󰞅";
 
     kb-remove-to-eol: "";
     kb-mode-complete: "";
 
-    kb-accept-entry: "Tab,Return";
-    kb-element-next: "Control+j";
-    kb-element-prev: "Control+k";
-    /*kb-row-left: "Control+h";*/
-    kb-row-right: "Control+l";
+    kb-accept-entry: "Return";
 }
 
 /*****----- Global Properties -----*****/
@@ -23,6 +18,8 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       500px;
+    x-offset:                    0px;
+    y-offset:                    0px;
 
     enabled:                     true;
     border-radius:               12px;
@@ -40,7 +37,7 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "inputbar", "listview", "mode-switcher"];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -56,9 +53,9 @@ inputbar {
 }
 
 prompt {
-    font: "JetBrainsMono Nerd Font 18";
+    font: "JetBrainsMono Nerd Font 17";
     enabled:                     true;
-    padding:                     10px 20px 10px 15px;
+    padding:                     10px 18px 10px 15px;
     border-radius:               10px;
     background-color:            @background;
     text-color:                  inherit;
@@ -75,7 +72,7 @@ entry {
     border-radius:               10px;
     padding:                     13px;
     background-color:            @background;
-    text-color:                  @foreground;
+    text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search...";
     placeholder-color:           inherit;
@@ -84,14 +81,14 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     8;
-    lines:                       8;
+    columns:                     1;
+    lines:                       10;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
     spacing:                     5px;
@@ -105,7 +102,7 @@ listview {
 element {
     enabled:                     true;
     spacing:                     0px;
-    padding:                     12px;
+    padding:                     10px;
     border:                      0px solid;
     border-radius:               12px;
     border-color:                @selected;
@@ -131,24 +128,12 @@ element-icon {
     cursor:                      inherit;
 }
 element-text {
-    enabled:                     false;
     background-color:            transparent;
     text-color:                  inherit;
     highlight:                   inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
-}
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
-    background-color:            transparent;
-    text-color:                  @foreground;
 }
 
 /*****----- Message -----*****/
@@ -167,3 +152,4 @@ textbox {
     horizontal-align:            0.0;
     highlight:                   none;
 }
+
