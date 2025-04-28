@@ -1,0 +1,33 @@
+(defcfg
+    process-unmapped-keys yes
+    linux-dev-names-exclude (
+        "YSPRINGTECH USB OPTICAL MOUSE"
+  )
+)
+
+(defsrc
+    tab  q    w    e    r    t    y    u    i    o    p
+    caps   a    s    d    f    g    h    j    k    l    ;
+    lsft     z    x    c    v    b    n    m
+)
+
+;; see: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#tap-hold
+;; no multi f24 for tty
+(defalias
+    caps (tap-hold 150 150 esc lctl)
+    a (tap-hold 200 170 a lalt)
+    r (tap-hold 200 170 r lmet)
+    s (tap-hold 200 170 s lsft)
+    t (tap-hold 200 170 t lctl)
+    n (tap-hold 200 170 n rctl)
+    e (tap-hold 200 170 e rsft)
+    i (tap-hold 200 170 i rmet)
+    o (tap-hold 200 170 o ralt)
+)
+
+
+(deflayer colemak_dh
+    tab  q    w    f    p    b    j    l    u    y    ;
+    @caps  @a   @r   @s   @t    g    m   @n   @e   @i   @o
+    lsft     x    c    d    v    z    k    h
+)

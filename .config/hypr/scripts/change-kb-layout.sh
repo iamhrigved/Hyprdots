@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 layout_file=$HOME/.cache/current-kb-layout
-current_layout=$(cat $layout_file)
+current_layout=$(cat $layout_file || echo "colemak_dh")
 
 if [[ $current_layout == "colemak_dh" ]]; then
     echo "qwerty" > $layout_file &&

@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-rofi -show drun -theme /styles/drun.rasi
+rofi -drun-use-desktop-cache -show drun -theme /styles/drun.rasi

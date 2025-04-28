@@ -25,6 +25,7 @@ hash[street2.jpg]=8
 hash[sunset1.png]=4
 hash[sunset2.jpg]=16
 hash[flowers1.png]=14
+hash[landscape7.png]=12
 
 # show menu (with icon)
 selected_wallpaper=$(for a in $wallpapers; do
@@ -46,7 +47,7 @@ selected_wallpaper=$(for a in $wallpapers; do
     # add icon and final echo
     list_item="$list_item\0icon\x1f$a"
     echo $list_item
-done | rofi -dmenu -p " " -theme /styles/swww.rasi)
+done | rofi -drun-use-desktop-cache -dmenu -p " " -theme /styles/swww.rasi)
 
 # removing the added " (current)" or the  from the selected wallpaper
 final_wallpaper=$(echo $selected_wallpaper | awk '{print $1}')
@@ -63,9 +64,9 @@ if [[ $selected_wallpaper != "" ]]; then
 
     kill -SIGUSR1 $(pgrep kitty) && # reload kitty theme
 
-    plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Wallust &&
-
     ln -f ~/Pictures/Wallpapers/$final_wallpaper ~/.cache/current-wallpaper && # creates a symlink to the current wallpaper
+
+    plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Wallust &&
 
     ~/.config/hypr/scripts/generate-wallpaper-variants.sh && # generates all the variants at a single time
 

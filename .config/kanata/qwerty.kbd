@@ -12,24 +12,16 @@
 ;; see: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#tap-hold
 (defalias
     esc-ctl (multi f24 (tap-hold 150 150 esc lctl))
-    a-mod (multi f24 (tap-hold 200 200 a lalt))
-    s-mod (multi f24 (tap-hold 200 200 s lmet))
-    d-mod (multi f24 (tap-hold 200 200 d lsft))
-    f-mod (multi f24 (tap-hold 200 200 f lctl))
-    ;-mod (multi f24 (tap-hold 200 200 ; ralt))
-    l-mod (multi f24 (tap-hold 200 200 l rmet))
-    k-mod (multi f24 (tap-hold 200 200 k rsft))
-    j-mod (multi f24 (tap-hold 200 200 j rctl))
+    a (multi f24 (tap-hold 200 200 a lalt))
+    s (multi f24 (tap-hold 200 200 s lmet))
+    d (multi f24 (tap-hold 200 200 d lsft))
+    f (multi f24 (tap-hold 200 200 f lctl))
+    ; (multi f24 (tap-hold 200 200 ; ralt))
+    l (multi f24 (tap-hold 200 200 l rmet))
+    k (multi f24 (tap-hold 200 200 k rsft))
+    j (multi f24 (tap-hold 200 200 j rctl))
 )
 
 (deflayer main
-    @esc-ctl
-    @a-mod
-    @s-mod
-    @d-mod
-    @f-mod
-    @;-mod
-    @l-mod
-    @k-mod
-    @j-mod
+    @esc-ctl @a @s @d @f @; @l @k @j
 )

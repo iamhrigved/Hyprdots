@@ -81,7 +81,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     7;
     lines:                       10;
     cycle:                       true;
     dynamic:                     true;
@@ -89,9 +89,9 @@ listview {
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                false;
-    fixed-columns:               true;
+    fixed-columns:               false;
     
-    spacing:                     5px;
+    spacing:                     0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -133,7 +133,7 @@ element-text {
     highlight:                   inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 /*****----- Message -----*****/

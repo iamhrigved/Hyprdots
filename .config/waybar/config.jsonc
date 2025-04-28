@@ -31,7 +31,7 @@
 
   // Hyprland
   "hyprland/workspaces": {
-    "disable-scroll": true,
+    "disable-scroll": false,
     "sort-by": "number",
     "all-outputs": true,
     "warp-on-scroll": false,
@@ -210,12 +210,8 @@
     "exec": "~/.config/hypr/scripts/waybar-kb-layout.sh",
     "on-click": "~/.config/hypr/scripts/change-kb-layout.sh",
     "return-type": "json",
-    "format-icons": {
-      "colemak_dh": "󰌌 ",
-      "qwerty": "󰌌 ",
-    },
     "interval": 1,
-    "format": "{} <span font='16' rise='-1800'>{icon}</span>",
+    "format": "{} <span font='16' rise='-1800'>󰌌 </span>",
   },
 
   // Audio setup
