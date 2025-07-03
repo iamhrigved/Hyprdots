@@ -20,12 +20,14 @@ hash[landscape6.png]=14
 hash[forest2-mononoke.png]=6
 hash[anime1.png]=20
 hash[anime2.jpg]=20
+hash[anime4.png]=2
 hash[street1.png]=2
 hash[street2.jpg]=8
 hash[sunset1.png]=4
 hash[sunset2.jpg]=16
 hash[flowers1.png]=14
 hash[landscape7.png]=12
+hash[sunset3.png]=2
 
 # show menu (with icon)
 selected_wallpaper=$(for a in $wallpapers; do
