@@ -5,7 +5,7 @@
     "spacing": 7, // Gaps between modules (4px)
     "modules-left": [
         "group/quicklinks-left",
-        "wlr/taskbar",
+        // "wlr/taskbar",
         "network",
         "hyprland/window",
     ],

@@ -20,10 +20,7 @@ window {
     y-offset:                    0px;
 
     enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               20px;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";
@@ -32,9 +29,8 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     20px;
-    margin:                      0px;
-    padding:                     20px;
+    spacing:                     10px;
+    padding:                     20px 20px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
@@ -46,19 +42,20 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
+    padding:                     15px 10px;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            @background;
+    background-color:            transparent;
     text-color:                  @foreground;
-    children:                    [ "entry" ];
+    children:                    [ "prompt", "entry" ];
 }
 
 prompt {
+    font: "JetBrainsMono Nerd Font 17";
     enabled:                     true;
-    background-color:            inherit;
+    padding:                     10px 10px 10px 15px;
+    border-radius:               10px;
+    background-color:            @background;
     text-color:                  inherit;
 }
 textbox-prompt-colon {
@@ -70,71 +67,71 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    background-color:            inherit;
+    border-radius:               10px;
+    padding:                     13px;
+    background-color:            @background;
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search...";
     placeholder-color:           inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
 }
 
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
-    lines:                       1;
+    columns:                     1;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
     spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
 }
-scrollbar {
-    handle-width:                5px ;
-    handle-color:                @selected;
-    border-radius:               0px;
-    background-color:            @background-alt;
-}
 
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     15px;
-    margin:                      0px;
-    padding:                     20px 10px;
-    border:                      0px solid;
-    border-radius:               20px;
+    spacing:                     0px;
+    padding:                     10px 10px;
+    border:                      0px;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            transparent;
     text-color:                  @foreground;
-    orientation:                 vertical;
     cursor:                      pointer;
+}
+element.alternate.normal {
+    background-color: transparent;
+    text-color: @foreground;
 }
 element normal.normal {
     background-color:            transparent;
     text-color:                  @foreground;
 }
 element selected.normal {
-    background-color:            @background-alt;
+    background-color:            @selected;
     text-color:                  @foreground;
+}
+element.normal.active {
+    background-color:            @background;
+}
+element.alternate.active {
+    background-color:            @background;
+}
+element.selected.active {
+    background-color:            @selected-alt;
 }
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        128px;
+    size:                        62px;
     cursor:                      inherit;
 }
 element-text {
@@ -143,20 +140,20 @@ element-text {
     highlight:                   inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.5;
+    horizontal-align:            0.0;
 }
 
 /*****----- Message -----*****/
 error-message {
-    padding:                     20px;
-    border:                      0px solid;
-    border-radius:               0px;
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            black / 10%;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
-    background-color:            transparent;
+    background-color:            @background;
     text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;

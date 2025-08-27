@@ -16,4 +16,6 @@ done;
 
 menu=$(echo $menu | sed -r '/^\s*$/d') # remove empty line
 
-echo $menu | rofi -dmenu -theme /styles/window.rasi
+# echo $menu | rofi -dmenu -theme /styles/window.rasi
+
+rofi -drun-use-desktop-cache -show window -p " " -theme /styles/window.rasi

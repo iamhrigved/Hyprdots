@@ -118,6 +118,12 @@ element selected.normal {
     background-color:            @selected;
     text-color:                  @foreground;
 }
+element.normal.active {
+    background-color:            @selected;
+}
+element.alternate.active {
+    background-color:            @selected;
+}
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
