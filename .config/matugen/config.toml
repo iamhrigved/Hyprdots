@@ -1,0 +1,28 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center", "--transition-fps", "60", "--transition-step", "100"]
+set = true
+
+[templates.kitty]
+input_path = "templates/kitty.conf"
+output_path = "~/.config/kitty/colors.conf"
+post_hook = "kill -SIGUSR1 $(pgrep kitty)"
+
+[templates.kde]
+input_path = "templates/kde.txt"
+output_path = "~/.config/kde-material-you-colors/color.txt"
+post_hook = "kde-material-you-colors --dark --color $(cat ~/.config/kde-material-you-colors/color.txt) --scheme-variant 5"
+
+[templates.quickshell]
+input_path = "templates/quickshell.qml"
+output_path = "~/.config/quickshell/utils/Colors.qml"
+
+[templates.test]
+input_path = "templates/test.colors"
+output_path = "~/.cache/test-matugen.colors"
+
+[config.custom_colors]
+red = { color = "#FF0000", blend = false }
+green = { color = "#00FF00", blend = false }
+cyan = { color = "#00FFFF", blend = false }
+magenta = { color = "#FF00FF", blend = false }
